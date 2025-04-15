@@ -16,11 +16,16 @@ pip install -r requirements.txt
 venv-pack -o .venv.tar.gz
 
 # Collect data
+echo "Starting prepare_data.sh"
 bash prepare_data.sh
+echo "Finished prepare_data.sh"
+
 
 
 # Run the indexer
-bash index.sh data/sample.txt
+bash index.sh
 
 # Run the ranker
 bash search.sh "this is a query!"
+
+tail -f /dev/null
